@@ -1,4 +1,4 @@
-Advent of Code 2025 — Solutions
+#Advent of Code 2025 — Solutions
 
 Welcome to my Advent of Code 2025 repository! 🎄✨
 
