@@ -45,22 +45,19 @@ int main(){
 
 	qsort(ranges, num_ranges, sizeof(Range), comp);
 
-	int j;
-	for (int i = 0; i < num_ranges-1; ++i)
+	int j = 0;
+	for (int i = num_ranges-1; i >= 0 ; i = j)
 	{
-		j = i+1;
-		while(j < num_ranges){
+		j = i-1;
+		while(j > 0 && ranges[j].end >= ranges[i].start){
 
-			if(ranges[j].start <= ranges[i].end+1){
-				ranges[i].end = ranges[j].end;
+			if(ranges[j].start >= ranges[i].start){
 				ranges[j].valid = 0;
-			}
-			if(ranges[j].start < ranges[i].start){
+			}else{
 				ranges[i].start = ranges[j].start;
 				ranges[j].valid = 0;
 			}
-			
-			j++;
+			j--;
 		}
 	}
 
