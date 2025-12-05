@@ -49,7 +49,7 @@ int main(){
 	for (int i = num_ranges-1; i >= 0 ; i = j)
 	{
 		j = i-1;
-		while(j > 0 && ranges[j].end >= ranges[i].start){
+		while(j >=	 0 && ranges[j].end+1 >= ranges[i].start){
 
 			if(ranges[j].start >= ranges[i].start){
 				ranges[j].valid = 0;
@@ -68,7 +68,7 @@ int main(){
 		}
 	}
 
-	printf("id_num = %llu\n", id_num);
+	printf("%llu\n", id_num);
 
 	return 0;
 }
